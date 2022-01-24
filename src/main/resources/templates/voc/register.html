@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>VOC Register</title>
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container align-content-center">
+
+    <div class="py-5 text-center">
+        <h2>VOC 등록</h2>
+    </div>
+    <form th:action method="post">
+        <div>
+            <label for="isClaim">클레임 여부</label>
+            <input type="checkbox" id="isClaim" name="isClaim" class="form-check-input" checked>
+        </div>
+<!--            <label for="isRequestCompensation">배상 요청 여부</label>-->
+<!--            <input type="checkbox" id="isRequestCompensation" name="isRequestCompensation" class="form-check-input" checked>-->
+<!--        <div>-->
+<!--            <label for="faultBy">귀책 당사자</label>-->
+<!--            <input type="text" id="faultBy" name="faultBy" class="form-text">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label for="faultContents">귀책 내용</label>-->
+<!--            <input type="text" id="faultContents" name="faultContents" class="form-text">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label for="penalty">패널티 내용</label>-->
+<!--            <input type="text" id="penalty" name="penalty" class="form-text">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label for="isCheckByCourier">기사 확인 여부</label>-->
+<!--            <input type="checkbox" id="isCheckByCourier" name="isCheckByCourier" class="form-check-input" checked>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label for="isObjection">이의제기 여부</label>-->
+<!--            <input type="checkbox" id="isObjection" name="isObjection" class="form-check-input" checked>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label for="compensation">배상 정보</label>-->
+<!--            <input type="text" id="compensation" name="compensation" class="form-text">-->
+<!--        </div>-->
+        <button class="w-100 btn btn-primary btn-lg" type="submit">등록</button>
+    </form>
+</div>
+</body>
+</html>
