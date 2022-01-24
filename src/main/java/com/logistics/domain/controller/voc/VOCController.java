@@ -1,7 +1,9 @@
-package com.logistics.domain.controller;
+package com.logistics.domain.controller.voc;
 
+import com.logistics.domain.model.FaultBy;
 import com.logistics.domain.model.VOC;
-import com.logistics.domain.repository.VOCRepository;
+import com.logistics.domain.repository.VOCRepositoryImpl;
+import com.logistics.domain.service.VOCService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,11 +18,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class VOCController {
 
     @Autowired
-    public VOCController(VOCRepository vocRepository) {
+    public VOCController(VOCRepositoryImpl vocRepository, VOCService vocService) {
         this.vocRepository = vocRepository;
+        this.vocService = vocService;
     }
 
-    private final VOCRepository vocRepository;
+    private final VOCRepositoryImpl vocRepository;
+    private final VOCService vocService;
+
+    @ModelAttribute("faultBy")
+    public FaultBy[] faultBy(){
+        return FaultBy.values();
+    }
 
     @GetMapping("/register")
     public String registerForm() {
@@ -29,7 +38,7 @@ public class VOCController {
 
     @PostMapping("/register")
     public String register(@ModelAttribute VOC voc) {
-        vocRepository.register(voc);
-        return "voc/register";
+        vocService.register(voc);
+        return "redirect:/voc/register";
     }
 }

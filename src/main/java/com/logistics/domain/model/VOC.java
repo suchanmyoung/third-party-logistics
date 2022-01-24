@@ -5,18 +5,19 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+@Data
 @Getter
 @Setter
-@Data
 public class VOC {
 
-    Long vocNum; // 요청 번호
-    Boolean isClaim; // 클레임 여부
-    Boolean isRequestCompensation; // 배상 요청 여부
-    String faultBy; // 귀책 당사자  >> Enum ?
-    String faultContents; // 귀책 내용
-    String penalty; // 패널티 내용
-    Boolean isCheckByCourier; // 기사 확인 여부
-    Boolean isObjection; // 이의 제기 여부
-    String compensation; // 배상 정보
+    private Long vocNum; // 요청 번호
+    private Boolean sClaim; // 클레임 여부
+    private Boolean isRequestCompensation; // 배상 요청 여부
+    private FaultBy faultBy; // 귀책 당사자  >> Enum ?
+    private String faultContents; // 귀책 내용
+    private String penalty; // 패널티 내용
+    private Boolean isCheckByCourier; // 기사 확인 여부
+    private Boolean isObjection; // 이의 제기 여부
+    private String compensation; // 배상 정보
+
 }
