@@ -17,5 +17,6 @@ public class VOCRepositoryImpl implements VOCRepository{
     public void register(VOC voc) {
         voc.setVocNum(++sequence);
         vocStore.put(voc.getVocNum(), voc);
+        log.info("VOC 번호 {}가 등록되었습니다.", voc.getVocNum());
     }
 }

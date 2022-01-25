@@ -11,4 +11,5 @@ public interface CourierRepository {
     public List<Courier> findAllCouriers();
     public Courier findByNum(Long id);
     public void penalty(Courier courier, int penalty);
+    public Courier findByName(String name);
 }

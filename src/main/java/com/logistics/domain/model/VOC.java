@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 @Data
 @Getter
 @Setter
@@ -20,5 +23,5 @@ public class VOC {
     private Boolean isCheckByCourier; // 기사 확인 여부
     private Boolean isObjection; // 이의 제기 여부
     private String compensation; // 배상 정보
-    private Courier courier; // 배송원 정보
+    private String courierName; // 배송원 정보
 }

@@ -19,10 +19,11 @@ public class VOCServiceImpl implements VOCService{
     private final CourierRepository courierRepository;
 
     public void register(VOC voc) {
-        if(voc.getFaultBy() == FaultBy.Transport){
-            Courier courier = courierRepository.findByNum(voc.getCourier().getCourierNum());
+        if (voc.getFaultBy() == FaultBy.Transport && voc.getCourierName() != null) {
+            Courier courier = courierRepository.findByName(voc.getCourierName());
             courierRepository.penalty(courier, 5000);
+        } else {
+            vocRepository.register(voc);
         }
-        vocRepository.register(voc);
     }
 }
