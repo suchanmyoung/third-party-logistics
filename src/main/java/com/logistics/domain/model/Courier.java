@@ -10,7 +10,8 @@ public class Courier {
     Long courierNum; // 기사 고유번호
     String courierName; //기사 이름
     Integer salary; //급여
-    boolean penalty; // 패널티 정보
+    boolean isPenalty = false; // 패널티 정보
+    boolean isPenaltyCheck; // 패널티 확인 여부
     boolean isObjection; // 이의 제기 여부
 
     public Courier(String courierName, Integer salary) {

@@ -9,7 +9,9 @@ public interface CourierRepository {
 
     public void save(Courier courier);
     public List<Courier> findAllCouriers();
+    public Courier findByName(String name);
     public Courier findByNum(Long id);
     public void penalty(Courier courier, int penalty);
-    public Courier findByName(String name);
+    public void penaltyCheck(Courier courier, int penalty);
+
 }

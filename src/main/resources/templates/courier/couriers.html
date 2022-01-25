@@ -18,12 +18,15 @@
         <thead class="table-info">배송원 목록</thead>
         <th>기사이름</th>
         <th>기사 급여</th>
-    <tr class="text-xxl-center" th:each="courier : ${couriers}">
-        <td class="table-info" th:text="${courier.getCourierName()}"></td>
-        <td class="tab-content" th:text="${courier.getSalary()}"></td>
-    </tr>
-    </table>
+        <th>페널티 여부</th>
+        <tr class="text-xxl-center" th:each="courier : ${couriers}">
+                <td class="table-info" name="courierName" th:text="${courier.courierName}"></td>
+                <td class="table-info" name="salary" th:text="${courier.salary}"></td>
+                <td class="table-info" name="penalry" th:text="${courier.penalty}"></td>
+                </tr>
+        </table>
 
 </div>
+<button class="w-100 btn btn-primary btn-lg" onclick="location.href='/'">홈으로</button>
 </body>
 </html>

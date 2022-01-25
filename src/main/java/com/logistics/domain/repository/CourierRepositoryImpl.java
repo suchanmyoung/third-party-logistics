@@ -19,6 +19,7 @@ public class CourierRepositoryImpl implements CourierRepository{
         courierStore.put(courier.getCourierNum(), courier);
     }
 
+    @Override
     public List<Courier> findAllCouriers(){
             return new ArrayList<>(courierStore.values());
         }
@@ -42,11 +43,18 @@ public class CourierRepositoryImpl implements CourierRepository{
 
     @Override
     public void penalty(Courier courier, int penalty) {
-        courier.setSalary(courier.getSalary() - 5000);
-        log.info("{}님의 급여가 차감되어 현재 급여는 {} 입니다.", courier.getCourierName(), courier.getSalary());
-
+        courier.setPenalty(true);
+        penaltyCheck(courier, penalty);
     }
 
-
+    @Override
+    public void penaltyCheck(Courier courier, int penalty) {
+        if (courier.isPenaltyCheck()) {
+            courier.setSalary(courier.getSalary() - 5000);
+            log.info("기사 {} 님의 급여가 차감되어 현재 급여는 {} 입니다. 신속한 협조에 감사드립니다.", courier.getCourierName(), courier.getSalary());
+        } else {
+            log.info("패널티가 발행되었습니다. 기사님의 확인을 기다리고 있습니다.");
+        }
+    }
 }
 
