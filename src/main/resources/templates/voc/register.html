@@ -32,6 +32,12 @@
             </div>
         </div>
         <div>
+            <div>기사 번호</div>
+            <div th:each="courier : ${courier}" class="form-check form-check-inline">
+                <input type="radio" id="courier" name="courier" th:value="${courier.courierNum}" th:text="${courier.courierName}" class="form-check-input">
+            </div>
+        </div>
+        <div>
             <label for="faultContents">귀책 내용</label>
             <input type="text" id="faultContents" name="faultContents" class="form-text">
         </div>

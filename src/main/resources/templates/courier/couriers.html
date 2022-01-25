@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>VOC Register</title>
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container align-content-center">
+    <table class="table">
+        <thead class="table-info">배송원 목록</thead>
+        <th>기사이름</th>
+        <th>기사 급여</th>
+    <tr class="text-xxl-center" th:each="courier : ${couriers}">
+        <td class="table-info" th:text="${courier.getCourierName()}"></td>
+        <td class="tab-content" th:text="${courier.getSalary()}"></td>
+    </tr>
+    </table>
+
+</div>
+</body>
+</html>

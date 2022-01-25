@@ -18,9 +18,4 @@ public class VOCRepositoryImpl implements VOCRepository{
         voc.setVocNum(++sequence);
         vocStore.put(voc.getVocNum(), voc);
     }
-
-    public void panalty(int penaltyFee){
-
-        //운송사 귀책 >> 비용 청구 접수 및 발급 >>패널티 발급 및 앱 푸시 >> 사인하면 월급에서 차감
-    }
 }
