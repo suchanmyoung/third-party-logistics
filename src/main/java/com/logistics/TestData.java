@@ -16,8 +16,10 @@ public class TestData {
     @PostConstruct
     public void init(){
         Courier courierA = new Courier("기사A", 2000000);
+        courierA.setPenalty(true);
         Courier courierB = new Courier("기사B", 4000000);
         Courier courierC = new Courier("기사C", 3000000);
+
 
         courierRepository.save(courierA);
         courierRepository.save(courierB);

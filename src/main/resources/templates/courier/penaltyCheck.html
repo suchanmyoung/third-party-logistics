@@ -17,12 +17,13 @@
     <h2>패널티 발행현황</h2>
 </div>
 <div th:each="courier : ${couriers}">
-<form th:if="${courier.penalty}" th:action method="post">
-    <li>
-        <ul>
-            <li th:text="${courier.courierName}"></li>
+<form th:if="${courier.penalty}" th:action="|${courier.courierNum}/penaltyCheck|" method="post">
+        <li th:text="${courier.courierName}"></li>
+        <input type="hidden" name="courierName" th:value="${courier.courierName}">
+        <input class="w-100 btn btn-primary btn-lg" type="checkbox" id="isPenaltyCheck"name="isPenaltyCheck">
+        <button class="w-100 btn btn-primary btn-lg" type="submit">등록</button>
         </ul>
-    </li>
+
 </form>
 </div>
 

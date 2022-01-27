@@ -24,4 +24,6 @@ public class Courier {
         this.salary = salary;
         this.isObjection = isObjection;
     }
+
+
 }
