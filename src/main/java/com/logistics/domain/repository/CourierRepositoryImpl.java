@@ -51,6 +51,7 @@ public class CourierRepositoryImpl implements CourierRepository{
     public void penaltyCheck(Courier courier, int penalty) {
         if (courier.isPenaltyCheck()) {
             courier.setSalary(courier.getSalary() - 5000);
+            courier.setPenalty(false);
             log.info("기사 {} 님의 급여가 차감되어 현재 급여는 {} 입니다. 신속한 협조에 감사드립니다.", courier.getCourierName(), courier.getSalary());
         } else {
             log.info("패널티가 발행되었습니다. 기사님의 확인을 기다리고 있습니다.");

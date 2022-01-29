@@ -4,7 +4,6 @@ import com.logistics.domain.model.Courier;
 import com.logistics.domain.repository.CourierRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

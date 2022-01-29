@@ -7,12 +7,12 @@ import lombok.Setter;
 @Setter
 public class Courier {
 
-    Long courierNum; // 기사 고유번호
-    String courierName; //기사 이름
-    Integer salary; //급여
-    boolean isPenalty = false; // 패널티 정보
-    boolean isPenaltyCheck; // 패널티 확인 여부
-    boolean isObjection; // 이의 제기 여부
+    private Long courierNum; // 기사 고유번호
+    private String courierName; //기사 이름
+    private Integer salary; //급여
+    private boolean isPenalty = false; // 패널티 정보
+    private boolean isPenaltyCheck; // 패널티 확인 여부
+    private boolean isObjection; // 이의 제기 여부
 
     public Courier(String courierName, Integer salary) {
         this.courierName = courierName;
