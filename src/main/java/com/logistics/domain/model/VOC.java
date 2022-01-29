@@ -18,4 +18,14 @@ public class VOC {
     private Boolean isObjection; // 이의 제기 여부
     private String compensation; // 배상 정보
     private String courierName; // 배송원 정보
+
+
+    public VOC(FaultBy faultBy, String faultContents, String penalty, Boolean isCheckByCourier, Boolean isObjection, String compensation) {
+        this.faultBy = faultBy;
+        this.faultContents = faultContents;
+        this.penalty = penalty;
+        this.isCheckByCourier = isCheckByCourier;
+        this.isObjection = isObjection;
+        this.compensation = compensation;
+    }
 }

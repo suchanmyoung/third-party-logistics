@@ -7,6 +7,8 @@ import com.logistics.domain.repository.CourierRepository;
 import com.logistics.domain.repository.VOCRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VOCServiceImpl implements VOCService{
 
@@ -20,10 +22,16 @@ public class VOCServiceImpl implements VOCService{
 
     public void register(VOC voc) {
         if (voc.getFaultBy() == FaultBy.Transport && voc.getCourierName() != null) {
+            vocRepository.register(voc);
             Courier courier = courierRepository.findByName(voc.getCourierName());
             courierRepository.penalty(courier, 5000);
         } else {
             vocRepository.register(voc);
         }
+    }
+
+    public List<VOC> vocList(){
+        return vocRepository.vodList();
+
     }
 }

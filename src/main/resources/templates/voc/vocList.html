@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>VOC Register</title>
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container align-content-center">
+    <table class="table">
+        <thead class="table-info">VOC 목록</thead>
+        <th>귀책 당사자</th>
+        <th>귀책 내용</th>
+        <th>페널티 내용</th>
+        <th>기사 확인 여부</th>
+        <th>이의 제기 여부</th>
+        <th>배상 정보</th>
+        <tr class="text-xxl-center" th:each="voc : ${allVoc}">
+            <td class="table-info" name="faultBy" th:text="${voc.faultBy}"></td>
+            <td class="table-info" name="faultContents" th:text="${voc.faultContents}"></td>
+            <td class="table-info" name="penalty" th:text="${voc.penalty}"></td>
+            <td class="table-info" name="isCheckByCourier" th:text="${voc.isCheckByCourier}"></td>
+            <td class="table-info" name="isObjection" th:text="${voc.isObjection}"></td>
+            <td class="table-info" name="compensation" th:text="${voc.compensation}"></td>
+        </tr>
+    </table>
+
+</div>
+<button class="w-100 btn btn-primary btn-lg" onclick="location.href='/'">홈으로</button>
+</body>
+</html>
