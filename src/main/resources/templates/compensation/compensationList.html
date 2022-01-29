@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>배상 정보 목록</title>
+</head>
+<body>
+
+<div class="container align-content-center">
+    <table class="table">
+        <thead class="table-info">배상 목록</thead>
+        <th>귀책 당사자</th>
+        <th>귀책 내용</th>
+        <th>페널티 내용</th>
+        <th>기사 확인 여부</th>
+        <th>이의 제기 여부</th>
+        <th>배상 정보</th>
+        <th>담당 기사</th>
+        <th>배상 금액</th>
+        <th>배상 건수</th>
+        <tr class="text-xxl-center" th:each="comp : ${allComp}">
+            <td class="table-info" name="faultBy" th:text="${comp.faultBy}"></td>
+            <td class="table-info" name="faultContents" th:text="${comp.faultContents}"></td>
+            <td class="table-info" name="penalty" th:text="${comp.penalty}"></td>
+            <td class="table-info" name="isCheckByCourier" th:text="${comp.isCheckByCourier}"></td>
+            <td class="table-info" name="isObjection" th:text="${comp.isObjection}"></td>
+            <td class="table-info" name="compensation" th:text="${comp.compensation}"></td>
+            <td class="table-info" name="courierName" th:text="${comp.courierName}"></td>
+            <td class="table-info" name="penaltyFee" th:text="${comp.penaltyFee}"></td>
+            <td class="table-info" name="penaltyCount" th:text="${comp.penaltyCount}"></td>
+        </tr>
+    </table>
+
+</div>
+<button class="w-100 btn btn-primary btn-lg" onclick="location.href='/'">홈으로</button>
+</body>
+</html>

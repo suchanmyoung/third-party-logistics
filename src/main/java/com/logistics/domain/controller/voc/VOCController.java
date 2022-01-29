@@ -37,7 +37,7 @@ public class VOCController {
 
     @ModelAttribute("allVoc")
     public List<VOC> allVoc() {
-        return vocRepository.vodList();
+        return vocRepository.vocList();
     }
 
     @ModelAttribute("faultBy")

@@ -5,6 +5,7 @@ import com.logistics.domain.model.FaultBy;
 import com.logistics.domain.model.VOC;
 import com.logistics.domain.repository.CourierRepository;
 import com.logistics.domain.repository.VOCRepository;
+import com.logistics.domain.service.VOCService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,7 @@ public class TestData {
 
     private final CourierRepository courierRepository;
     private final VOCRepository vocRepository;
+    private final VOCService vocService;
 
     @PostConstruct
     public void initCourier(){
@@ -36,9 +38,9 @@ public class TestData {
         VOC vocB = new VOC(FaultBy.Transport, "배송물품 누락", "없음", false, false, "배상정보 없음");
         VOC vocC = new VOC(FaultBy.Customer, "운송사 오배송", "급여 5천원 차감", true, true, "배상정보 없음");
 
-        vocRepository.register(vocA);
-        vocRepository.register(vocB);
-        vocRepository.register(vocC);
+        vocService.register(vocA);
+        vocService.register(vocB);
+        vocService.register(vocC);
     }
 
 }

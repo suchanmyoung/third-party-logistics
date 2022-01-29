@@ -19,7 +19,7 @@ public class VOCRepositoryImpl implements VOCRepository{
         log.info("VOC 번호 {}가 등록되었습니다.", voc.getVocNum());
     }
 
-    public List<VOC> vodList(){
+    public List<VOC> vocList(){
         return new ArrayList<>(vocStore.values());
     }
 }
