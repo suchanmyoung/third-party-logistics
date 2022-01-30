@@ -14,27 +14,19 @@ import java.util.List;
 @Service
 public class VOCServiceImpl implements VOCService{
 
-    public VOCServiceImpl(VOCRepository vocRepository, CourierRepository courierRepository, CompensationRepository compensationRepository) {
+    public VOCServiceImpl(VOCRepository vocRepository, CourierRepository courierRepository, CompensationService compensationService) {
         this.vocRepository = vocRepository;
         this.courierRepository = courierRepository;
-        this.compensationRepository = compensationRepository;
+        this.compensationService = compensationService;
     }
 
     private final VOCRepository vocRepository;
     private final CourierRepository courierRepository;
-    private final CompensationRepository compensationRepository;
+    private final CompensationService compensationService;
 
     public void register(VOC voc) {
-        if (voc.getFaultBy() == FaultBy.Transport) {
-            compensationRepository.register(voc);
-            vocRepository.register(voc);
-            if(voc.getCourierName() != null) {
-                Courier courier = courierRepository.findByName(voc.getCourierName());
-                courierRepository.penalty(courier, 5000);
-            }
-        } else {
-            vocRepository.register(voc);
-        }
+        vocRepository.register(voc);
+        compensationService.register(voc);
     }
 
     public List<VOC> vocList(){

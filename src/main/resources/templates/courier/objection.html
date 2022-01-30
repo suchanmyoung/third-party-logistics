@@ -14,7 +14,7 @@
 <body>
 
 <div class="py-5 text-center">
-    <h2>패널티 납부</h2>
+    <h2>이의 제기</h2>
 </div>
 <div th:each="courier : ${couriers}">
 <form th:if="${courier.penalty}" th:action="|${courier.courierNum}/penaltyCheck|" method="post">

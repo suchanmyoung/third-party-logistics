@@ -21,9 +21,9 @@ public class CompensationRepositoryImpl implements CompensationRepository{
     public void register(VOC voc) {
         Compensation comp = new Compensation(voc.getFaultBy(), voc.getFaultContents(), voc.getPenalty(), voc.getIsCheckByCourier(), voc.getIsObjection(), voc.getCompensation());
         comp.setCompensationNum(++sequence);
+        comp.setPenaltyCount(comp.getPenaltyCount()+1);
         compensationStore.put(comp.getCompensationNum(), comp);
         log.info("배상 정보 번호 {}가 등록되었습니다.", comp.getCompensationNum());
-        log.error("배상 건수는?", comp.getPenaltyCount());
     }
 
     @Override
