@@ -34,8 +34,7 @@ public class CompensationServiceImpl implements CompensationService{
 
     @Override
     public void objection(Courier courier) {
-        log.error("courier 정보는 {}", courier.toString());
         Compensation compensation = compensationRepository.findCompensationByCourierName(courier.getCourierName());
-        log.error("courierName은 {} 입니다.", compensation.getCourierName());
+        compensationRepository.objection(compensation);
     }
 }

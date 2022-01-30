@@ -21,12 +21,9 @@ public class CompensationRepositoryImpl implements CompensationRepository{
     public void register(VOC voc) {
         Compensation comp = new Compensation(voc.getFaultBy(), voc.getFaultContents(), voc.getPenalty(), voc.getIsCheckByCourier(), voc.getIsObjection(), voc.getCompensation());
         comp.setCourierName(voc.getCourierName());
-        log.warn("courierName = {}", comp.getCourierName());
-        log.warn("courierName = {}", voc.getCourierName());
         comp.setCompensationNum(++sequence);
         comp.setPenaltyCount(comp.getPenaltyCount()+1);
         compensationStore.put(comp.getCompensationNum(), comp);
-        log.info("배상 정보 번호 {}가 등록되었습니다.", comp.getCompensationNum());
     }
 
     @Override
@@ -37,7 +34,6 @@ public class CompensationRepositoryImpl implements CompensationRepository{
 
     @Override
     public Compensation findCompensationByCourierName(String courierName){
-        log.error("courier 정보는 {}", courierName);
         List<Compensation> compensations = compensationList();
         for (Compensation compensation : compensations) {
             if(compensation.getCourierName().equals(courierName)){
@@ -45,5 +41,10 @@ public class CompensationRepositoryImpl implements CompensationRepository{
             }
         }
         return null;
+    }
+
+    @Override
+    public void objection(Compensation compensation){
+        log.info("배상 정보 {}에 대한 이의제기가 등록되었습니다. 만약 증명 내용이 사실과 다를 경우 배상금이 가중됩니다,", compensation.getCompensationNum());
     }
 }

@@ -58,7 +58,6 @@ public class CourierController {
                                 @RequestParam boolean isObjection){
         Courier courier = courierRepository.findByName(courierName);
         courier.setObjection(isObjection);
-        log.error("courier 정보는 {}", courier.toString());
         compensationService.objection(courier);
         return "redirect:/courier/objection";
     }

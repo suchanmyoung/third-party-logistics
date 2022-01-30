@@ -9,4 +9,5 @@ public interface CompensationRepository {
     public void register(VOC voc);
     public List<Compensation> compensationList();
     public Compensation findCompensationByCourierName(String courierName);
+    public void objection(Compensation compensation);
 }
