@@ -1,7 +1,6 @@
 package com.logistics.domain.controller.compensation;
 
 import com.logistics.domain.model.Compensation;
-import com.logistics.domain.model.VOC;
 import com.logistics.domain.repository.CompensationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
