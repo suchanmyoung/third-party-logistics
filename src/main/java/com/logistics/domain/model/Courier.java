@@ -2,9 +2,11 @@ package com.logistics.domain.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class Courier {
 
     private Long courierNum; // 기사 고유번호
@@ -12,7 +14,7 @@ public class Courier {
     private Integer salary; //급여
     private boolean isPenalty = false; // 패널티 정보
     private boolean isPenaltyCheck; // 패널티 확인 여부
-    private boolean isObjection; // 이의 제기 여부
+    private boolean isObjection = false; // 이의 제기 여부
 
     public Courier(String courierName, Integer salary) {
         this.courierName = courierName;

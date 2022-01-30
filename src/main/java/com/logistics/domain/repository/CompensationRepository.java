@@ -8,4 +8,5 @@ import java.util.List;
 public interface CompensationRepository {
     public void register(VOC voc);
     public List<Compensation> compensationList();
+    public Compensation findCompensationByCourierName(String courierName);
 }

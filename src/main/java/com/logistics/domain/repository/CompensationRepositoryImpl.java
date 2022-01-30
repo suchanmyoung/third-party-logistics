@@ -20,6 +20,9 @@ public class CompensationRepositoryImpl implements CompensationRepository{
     @Override
     public void register(VOC voc) {
         Compensation comp = new Compensation(voc.getFaultBy(), voc.getFaultContents(), voc.getPenalty(), voc.getIsCheckByCourier(), voc.getIsObjection(), voc.getCompensation());
+        comp.setCourierName(voc.getCourierName());
+        log.warn("courierName = {}", comp.getCourierName());
+        log.warn("courierName = {}", voc.getCourierName());
         comp.setCompensationNum(++sequence);
         comp.setPenaltyCount(comp.getPenaltyCount()+1);
         compensationStore.put(comp.getCompensationNum(), comp);
@@ -28,6 +31,19 @@ public class CompensationRepositoryImpl implements CompensationRepository{
 
     @Override
     public List<Compensation> compensationList(){
+
         return new ArrayList<>(compensationStore.values());
+    }
+
+    @Override
+    public Compensation findCompensationByCourierName(String courierName){
+        log.error("courier 정보는 {}", courierName);
+        List<Compensation> compensations = compensationList();
+        for (Compensation compensation : compensations) {
+            if(compensation.getCourierName().equals(courierName)){
+                return compensation;
+            }
+        }
+        return null;
     }
 }

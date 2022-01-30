@@ -13,7 +13,6 @@ public class Compensation extends VOC{
     private String courierName; // 배송원 정보
     private Integer penaltyFee=5000; // 배상 금액
     private Integer penaltyCount=0; // 총 배상 건수
-    //배상 금액을 카운트할 방법을 찾아야 해..
 
     public Compensation(FaultBy faultBy, String faultContents, String penalty, Boolean isCheckByCourier, Boolean isObjection, String compensation) {
         super(faultBy, faultContents, penalty, isCheckByCourier, isObjection, compensation);

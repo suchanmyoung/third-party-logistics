@@ -20,6 +20,16 @@ public class VOC {
     private String courierName; // 배송원 정보
 
 
+    public VOC(FaultBy faultBy, String courierName, String faultContents, String penalty, Boolean isCheckByCourier, Boolean isObjection, String compensation) {
+        this.faultBy = faultBy;
+        this.courierName = courierName;
+        this.faultContents = faultContents;
+        this.penalty = penalty;
+        this.isCheckByCourier = isCheckByCourier;
+        this.isObjection = isObjection;
+        this.compensation = compensation;
+    }
+
     public VOC(FaultBy faultBy, String faultContents, String penalty, Boolean isCheckByCourier, Boolean isObjection, String compensation) {
         this.faultBy = faultBy;
         this.faultContents = faultContents;

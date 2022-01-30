@@ -12,6 +12,7 @@
     <table class="table">
         <thead class="table-info">배상 목록</thead>
         <th>귀책 당사자</th>
+        <th>기사명</th>
         <th>귀책 내용</th>
         <th>페널티 내용</th>
         <th>기사 확인 여부</th>
@@ -22,6 +23,7 @@
         <th>배상 건수</th>
         <tr class="text-xxl-center" th:each="comp : ${allComp}">
             <td class="table-info" name="faultBy" th:text="${comp.faultBy}"></td>
+            <td class="table-info" name="faultBy" th:text="${comp.courierName}"></td>
             <td class="table-info" name="faultContents" th:text="${comp.faultContents}"></td>
             <td class="table-info" name="penalty" th:text="${comp.penalty}"></td>
             <td class="table-info" name="isCheckByCourier" th:text="${comp.isCheckByCourier}"></td>

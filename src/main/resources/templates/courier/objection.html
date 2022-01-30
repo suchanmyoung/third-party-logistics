@@ -17,11 +17,11 @@
     <h2>이의 제기</h2>
 </div>
 <div th:each="courier : ${couriers}">
-<form th:if="${courier.penalty}" th:action="|${courier.courierNum}/penaltyCheck|" method="post">
+<form th:if="${courier.penalty}" th:action="|${courier.courierNum}/objection|" method="post">
         <li th:text="${courier.courierName}"></li>
         <input type="hidden" name="courierName" th:value="${courier.courierName}">
-        <input class="w-100 btn btn-primary btn-lg" type="checkbox" id="isPenaltyCheck"name="isPenaltyCheck">
-        <button class="w-100 btn btn-primary btn-lg" type="submit">패널티 납부</button>
+        <input class="w-100 btn btn-primary btn-lg" type="checkbox" id="isObjection" name="isObjection">
+        <button class="w-100 btn btn-primary btn-lg" type="submit">이의제기</button>
         </ul>
 
 </form>
