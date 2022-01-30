@@ -12,10 +12,11 @@
   * 요청이 모두 처리되면 해당 결과를 view로 반환하여 사용자에게 전달
 
 ### Class Diagram
-![](src/main/resources/static/class_diagram.svg)
+![](src/main/resources/static/class_diagram.jpg)
+
 
 ### DB 스키마
-![](src/main/resources/static/table_schema.svg)
+![](src/main/resources/static/table_schema.jpg)
 
 ### 개선사항
 * VOC 정보와 부모 정보의 상속 관계 개선 
